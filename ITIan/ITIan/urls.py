@@ -23,4 +23,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='base.html')),
     path('trainee/',include('trainee.urls')),
     path('course/',include('course.urls')),
+    path('registration/',include('registration.urls')),
 ]

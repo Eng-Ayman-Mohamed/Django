@@ -8,8 +8,8 @@ def traineeList (request):
 def addTrainee(request):
     return HttpResponse('add trainee')
 
-def updateTrainee(request):
-    return HttpResponse('update trainee')
+def updateTrainee(request,id):
+    return HttpResponse(f'update trainee with id: {id}')
 
-def deleteTrainee(request):
-    return HttpResponse('delete trainee')
+def deleteTrainee(request,id):
+    return HttpResponse('delete trainee with id: {id}')

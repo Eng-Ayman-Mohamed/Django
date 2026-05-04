@@ -8,8 +8,8 @@ def courseList(request):
 def addCourse(request):
     return HttpResponse('add Course')
 
-def updateCourse(request):
-    return HttpResponse('update Course')
+def updateCourse(request,id):
+    return HttpResponse(f'update Course with id: {id}')
 
-def deleteCourse(request):
-    return HttpResponse('delete Course')
+def deleteCourse(request,id):
+    return HttpResponse(f'delete Course with id: ${id}')

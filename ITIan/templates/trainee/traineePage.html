@@ -1,0 +1,14 @@
+<!-- prettier-ignore -->
+{%extends "layout.html"%}
+{% block title %}
+    {{ trainee.firstName }}
+{%endblock%} 
+{%block content%}
+    <div class="trainee">
+        <h2> {{ trainee.firstName }}<h2>
+        <h3> {{ trainee.lastName }}<h3>
+        <p> {{ trainee.numOfMonths }}<p>
+        <p> {{ trainee.track }}<p>
+        <p> {{ trainee.createdAt }}<p>
+    </div>
+{%endblock%}

@@ -1,8 +1,19 @@
 <!-- prettier-ignore -->
 {%extends "layout.html"%} 
 {% block title %}
-    Courses list
+    Courses
 {%endblock%}
 {%block content%}
-<h1>List of courses</h1>
+    <h1>List of courses</h1>
+    <div class="courses">
+    {% for course in courses %}
+        <div class="course">
+            <h2> {{ course.name }}<h2>
+            <h3> {{ course.instructor }}<h3>
+            <p> {{ course.statDate }}<p>
+            <p> {{ course.endDate }}<p>
+            <p> {{ course.createdAt }}<p>
+        </div>
+    {% endfor %}
+    </div> 
 {%endblock%}

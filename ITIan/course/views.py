@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import course
 # Create your views here.
 
 def courseList(request):
-    return render(request, 'course/list.html')
+    courses = course.objects.all()
+    return render(request, 'course/list.html',{'courses':courses})
 
 def addCourse(request):
     return HttpResponse('add Course')

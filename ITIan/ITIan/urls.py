@@ -1,4 +1,3 @@
-from django.views.generic import TemplateView
 """
 URL configuration for ITIan project.
 
@@ -17,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='base.html')),
+    path('', views.mainPage),
     path('trainee/',include('trainee.urls')),
     path('course/',include('course.urls')),
     path('registration/',include('registration.urls')),

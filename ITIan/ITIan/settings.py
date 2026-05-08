@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'course.apps.CourseConfig',
     'trainee.apps.TraineeConfig',
     'registration.apps.RegistrationConfig'
@@ -76,10 +77,14 @@ WSGI_APPLICATION = 'ITIan.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'itians',  # The name of the database you created
+        'USER': 'ayman-mohamed',         # Your PostgreSQL username
+        'PASSWORD': 'p@ssword', # Your PostgreSQL password
+        'HOST': 'localhost',        # Or your database server's IP
+        'PORT': '5432',             # Default PostgreSQL port
     }
-}
+}   
 
 
 # Password validation

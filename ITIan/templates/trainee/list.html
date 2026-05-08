@@ -17,6 +17,7 @@
             <p> {{ trainee.numOfMonths }}<p>
             <p> {{ trainee.track }}<p>
             <p> {{ trainee.createdAt }}<p>
+            <a href="{%url 'deleteTrainee' trainee.id %}">Delete</a>
         </div>
     {% endfor %}
     </div> 

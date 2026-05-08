@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{%extends "layout.html"%}
+{% block title %}
+    New trainee
+{%endblock%} 
+{%block content%}
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <label>First name</label>
+        <input type="text" name="firstName" >
+        </br>
+        <label>Last name</label>
+        <input type="text" name="lastName" >
+        </br>
+        <label>Number of months</label>
+        <input type="Number" name="numOfMonths" >
+        </br>
+        <label>Track</label>
+        <input type="text" name="track" >
+        </br>
+        <input type="submit" value ='add'>
+    </form>
+{%endblock%}

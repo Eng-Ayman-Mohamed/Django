@@ -4,15 +4,15 @@
     Courses
 {%endblock%}
 {%block content%}
-    <h1>List of courses</h1>
-    <div class="courses">
+    <h1 class="page-title">List of courses</h1>
+    <div class="courses cards-grid">
     {% for course in courses %}
-        <div class="course">
-            <h2> {{ course.name }}<h2>
-            <h3> {{ course.instructor }}<h3>
-            <p> {{ course.statDate }}<p>
-            <p> {{ course.endDate }}<p>
-            <p> {{ course.createdAt }}<p>
+        <div class="course card course-card">
+            <h2 class="card-title"> {{ course.name }}<h2>
+            <h3 class="card-subtitle"> {{ course.instructor }}<h3>
+            <p class="card-text"> {{ course.statDate }}<p>
+            <p class="card-text"> {{ course.endDate }}<p>
+            <p class="card-text"> {{ course.createdAt }}<p>
         </div>
     {% endfor %}
     </div> 

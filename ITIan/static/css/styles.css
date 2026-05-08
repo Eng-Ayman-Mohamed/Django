@@ -1,44 +1,232 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --bg: #07121f;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.12);
+  --accent: #78b8ff;
+  --accent-strong: #70a4ff;
+  --text: #f5f8ff;
+  --muted: #b3c2dc;
+  --danger: #ff6b6b;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
 body {
-  background-color: rgb(0, 4, 20);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(120, 184, 255, 0.14),
+      transparent 30%
+    ),
+    linear-gradient(180deg, #081724 0%, #020812 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  background-color: rgb(0, 4, 20);
-  color: white;
-  padding: 20px;
+  width: 220px;
+  min-height: 100vh;
+  padding: 32px 20px;
+  gap: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 27, 52, 0.95),
+    rgba(7, 18, 31, 0.98)
+  );
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.sidebar a {
-  padding: 5px;
+.sidebar .nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link:focus {
+  color: var(--text);
+  background: rgba(120, 184, 255, 0.14);
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 48px;
+}
+
+.page-title {
+  margin-bottom: 26px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.trainee-card {
+  border-color: rgba(120, 184, 255, 0.3);
+}
+
+.course-card {
+  border-color: rgba(190, 108, 255, 0.24);
+}
+
+.detail-card {
+  max-width: 520px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.card-subtitle {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.card-text {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.item-link {
+  color: var(--accent-strong);
   text-decoration: none;
 }
 
-.sidebar a:hover {
-  color: brown;
+.item-link:hover {
+  text-decoration: underline;
 }
 
-.login {
-  display: flex;
-}
-.courses {
-  display: flex;
+.btn,
+.form-card input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.course {
-  background-color: beige;
-  margin: 5px;
-  padding: 10px 20px;
+.btn:hover,
+.form-card input[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  color: var(--text);
+  background: rgba(255, 107, 107, 0.18);
+}
+
+.btn-primary {
+  color: var(--text);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+
+.form-card {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.field-label {
+  color: var(--text);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.field-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: rgba(120, 184, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(120, 184, 255, 0.25);
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    gap: 10px;
+    padding: 20px 12px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
 }

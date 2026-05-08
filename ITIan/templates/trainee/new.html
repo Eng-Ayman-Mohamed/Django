@@ -4,20 +4,20 @@
     New trainee
 {%endblock%} 
 {%block content%}
-    <form method="post" enctype="multipart/form-data">
+    <form class="form-card" method="post" enctype="multipart/form-data">
         {%csrf_token%}
-        <label>First name</label>
-        <input type="text" name="firstName" >
+        <label class="field-label">First name</label>
+        <input class="field-input" type="text" name="firstName" >
         </br>
-        <label>Last name</label>
-        <input type="text" name="lastName" >
+        <label class="field-label">Last name</label>
+        <input class="field-input" type="text" name="lastName" >
         </br>
-        <label>Number of months</label>
-        <input type="Number" name="numOfMonths" >
+        <label class="field-label">Number of months</label>
+        <input class="field-input" type="Number" name="numOfMonths" >
         </br>
-        <label>Track</label>
-        <input type="text" name="track" >
+        <label class="field-label">Track</label>
+        <input class="field-input" type="text" name="track" >
         </br>
-        <input type="submit" value ='add'>
+        <input class="btn btn-primary" type="submit" value ='add'>
     </form>
 {%endblock%}

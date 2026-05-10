@@ -4,8 +4,19 @@
     New trainee
 {%endblock%} 
 {%block content%}
-<form class="form-card" method="post" enctype="multipart/form-data">
-  {%csrf_token%} {{form.as_p}}
-  <input class="btn btn-primary" type="submit" value="add" />
-</form>
+<div class="form-container">
+  <form
+    class="form-card django-form"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {%csrf_token%}
+    <h2 class="form-title">Add New Trainee</h2>
+    {{form.as_p}}
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Add Trainee</button>
+      <a class="btn btn-secondary" href="{% url 'trainees' %}">Cancel</a>
+    </div>
+  </form>
+</div>
 {%endblock%}

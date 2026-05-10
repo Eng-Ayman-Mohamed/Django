@@ -4,20 +4,30 @@
     New trainee
 {%endblock%} 
 {%block content%}
-    <form class="form-card" method="post" enctype="multipart/form-data">
-        {%csrf_token%}
-        <label class="field-label">First name</label>
-        <input class="field-input" type="text" name="firstName" >
-        </br>
-        <label class="field-label">Last name</label>
-        <input class="field-input" type="text" name="lastName" >
-        </br>
-        <label class="field-label">Number of months</label>
-        <input class="field-input" type="Number" name="numOfMonths" >
-        </br>
-        <label class="field-label">Track</label>
-        <input class="field-input" type="text" name="track" >
-        </br>
-        <input class="btn btn-primary" type="submit" value ='add'>
-    </form>
+<form class="form-card" method="post" enctype="multipart/form-data">
+  {%csrf_token%}
+  <label class="field-label">First name</label>
+  <input class="field-input" type="text" name="firstName" />
+  <br />
+  <label class="field-label">Last name</label>
+  <input class="field-input" type="text" name="lastName" />
+  <br />
+  <label class="field-label">Number of months</label>
+  <input class="field-input" type="Number" name="numOfMonths" />
+  <br />
+  <label class="field-label">Track</label>
+  <input class="field-input" type="text" name="track" />
+  <br />
+  <label class="field-label">Profile image</label>
+  <input class="field-input" type="file" name="image" />
+  <br />
+  <label class="field-label">course</label>
+  <select class="field-input" name="course">
+    {% for course in courses %}
+    <option value="{{ course.id }}">{{ course.name }}</option>
+    {% endfor %}
+  </select>
+  <br />
+  <input class="btn btn-primary" type="submit" value="add" />
+</form>
 {%endblock%}

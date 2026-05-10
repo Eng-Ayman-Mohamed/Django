@@ -99,6 +99,29 @@ a {
   padding: 24px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-card img {
+  height: 300px;
+  border-radius: 16px;
+}
+
+.detail-card img {
+  height: 300px;
+  border-radius: 16px;
 }
 
 .trainee-card {
@@ -158,11 +181,17 @@ a {
 .btn:hover,
 .form-card input[type="submit"]:hover {
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-danger {
   color: var(--text);
   background: rgba(255, 107, 107, 0.18);
+}
+
+.btn-success {
+  color: var(--text);
+  background: rgba(107, 255, 107, 0.18);
 }
 
 .btn-primary {
@@ -197,7 +226,8 @@ a {
   color: var(--text);
 }
 
-.field-input:focus {
+.field-input:focus,
+.field-input:focus-visible {
   outline: none;
   border-color: rgba(120, 184, 255, 0.6);
   box-shadow: inset 0 0 0 1px rgba(120, 184, 255, 0.25);
@@ -228,5 +258,13 @@ a {
 
   .page-title {
     font-size: 2rem;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  .detail-card img {
+    height: 250px;
   }
 }

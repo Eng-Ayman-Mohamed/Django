@@ -4,11 +4,13 @@
     {{ trainee.firstName }}
 {%endblock%} 
 {%block content%}
-    <div class="trainee card trainee-card detail-card">
-        <h2 class="card-title"> {{ trainee.firstName }}<h2>
-        <h3 class="card-subtitle"> {{ trainee.lastName }}<h3>
-        <p class="card-text"> {{ trainee.numOfMonths }}<p>
-        <p class="card-text"> {{ trainee.track }}<p>
-        <p class="card-text"> {{ trainee.createdAt }}<p>
-    </div>
+<div class="trainee card trainee-card detail-card">
+  <img src="{{trainee.image.url}}" alt="{{ trainee.firstName }} {{ trainee.lastName }} profile image" />
+  <h2 class="card-title">{{ trainee.firstName }}</h2>
+  <h3 class="card-subtitle">{{ trainee.lastName }}</h3>
+  <p class="card-text">{{ trainee.numOfMonths }}</p>
+  <p class="card-text">{{ trainee.track }}</p>
+  <p class="card-text">{{ trainee.course.name }}</p>
+  <p class="card-text">{{ trainee.createdAt }}</p>
+</div>
 {%endblock%}

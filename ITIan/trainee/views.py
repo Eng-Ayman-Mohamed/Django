@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import trainee
+from course.models import course
 # Create your views here.
 
 def traineeList (request):
@@ -12,17 +13,17 @@ def viewTrainee (request, id):
     return render(request, 'trainee/traineePage.html', {'trainee':traineeData})
 
 def addTrainee(request):
+    courses = course.objects.all()
     if request.method == 'POST':
-
         trainee.objects.create(
             firstName=request.POST['firstName'],
             lastName=request.POST['lastName'],
             numOfMonths=request.POST['numOfMonths'],
             track=request.POST['track'],
-
+            course=course.objects.get(id=request.POST['course'])
         )
         return redirect ('trainees')
-    return render (request,'trainee/new.html')
+    return render (request,'trainee/new.html', {'courses':courses})
 
 def updateTrainee(request,id):
     return HttpResponse(f'update trainee with id: {id}')

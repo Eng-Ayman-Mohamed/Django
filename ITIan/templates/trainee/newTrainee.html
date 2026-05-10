@@ -1,0 +1,11 @@
+<!-- prettier-ignore -->
+{%extends "layout.html"%}
+{% block title %}
+    New trainee
+{%endblock%} 
+{%block content%}
+<form class="form-card" method="post" enctype="multipart/form-data">
+  {%csrf_token%} {{form.as_p}}
+  <input class="btn btn-primary" type="submit" value="add" />
+</form>
+{%endblock%}

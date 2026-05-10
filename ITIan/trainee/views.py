@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import trainee
 from course.models import course
+from .forms import *
 # Create your views here.
 
 def traineeList (request):
@@ -24,6 +25,16 @@ def addTrainee(request):
         )
         return redirect ('trainees')
     return render (request,'trainee/new.html', {'courses':courses})
+
+def addNewTrainee(request):
+    if request.method == 'POST':
+        form=TraineeFormModel(data=request.POST,files=request.FILES)
+        if(form.is_valid()):
+            form.save()
+
+        return redirect ('trainees')
+
+    return render (request,'trainee/newTrainee.html',{'form':TraineeFormModel()})
 
 def updateTrainee(request,id):
     return HttpResponse(f'update trainee with id: {id}')

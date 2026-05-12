@@ -1,13 +1,14 @@
 <!-- prettier-ignore -->
 {% extends "layout.html" %}
 {% block title %}
-    Login
+    Register
 {%endblock%}
 
 {% block content %}
 <div>
-  <input placeholder="Enter yourName" />
-  <input type="password" placeholder="Enter you password" />
-  <input type="password" placeholder="confirm you password" />
+  <form action={% url 'register' %} method="post">
+    {%csrf_token%} {{form}}
+    <button>Submit</button>
+  </form>
 </div>
 {% endblock %}

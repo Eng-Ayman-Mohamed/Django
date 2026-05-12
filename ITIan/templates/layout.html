@@ -15,6 +15,6 @@
         <a class="nav-link" href={% url "trainees" %}>Trainees list</a>
         <a class="nav-link" href="/course/list/">Courses list</a>
         <a class="nav-link" href="/registration/login/">Login</a>
-        <a class="nav-link" href="/registration/register/">Register</a>
+        <a class="nav-link" href={% url 'register' %}>Register</a>
       </div>
       <div class="main-content">{% block content %} {% endblock %}</div>

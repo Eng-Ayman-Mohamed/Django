@@ -5,8 +5,14 @@
 {%endblock%}
 
 {% block content %}
-<div class="login">
-  <input placeholder="Enter yourName" />
-  <input type="password" placeholder="Enter you password" />
+<div class="form-container">
+  <form class="form-card django-form" action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <h2 class="form-title">Login</h2>
+    {{ form }}
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+  </form>
 </div>
 {% endblock %}

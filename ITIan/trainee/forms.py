@@ -8,7 +8,7 @@ class TraineeForm(forms.Form):
     numOfMonths=forms.IntegerField()
     track=forms.TextInput() 
     image =forms.ImageField()
-    course=forms.ChoiceField( choices=[(course.id, course.name) for course in course.objects.all()], required=False)
+    course=forms.ChoiceField( choices=[(c.id, c.name) for c in course.objects.all()], required=False)
 
 class TraineeFormModel(forms.ModelForm):
     class Meta:

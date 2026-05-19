@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     
     'course.apps.CourseConfig',
     'trainee.apps.TraineeConfig',
-    'registration.apps.RegistrationConfig'
+    'registration.apps.RegistrationConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'itians',  # The name of the database you created
         'USER': 'ayman-mohamed',         # Your PostgreSQL username
-        'PASSWORD': 'p@ssword', # Your PostgreSQL password
+        'PASSWORD': '132001', # Your PostgreSQL password
         'HOST': 'localhost',        # Or your database server's IP
         'PORT': '5432',             # Default PostgreSQL port
     }

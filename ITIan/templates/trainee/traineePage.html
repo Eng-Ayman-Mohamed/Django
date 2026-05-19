@@ -1,8 +1,8 @@
 <!-- prettier-ignore -->
 {%extends "layout.html"%}
 {% block title %}
-    {{ trainee.firstName }}
-{%endblock%} 
+{{ trainee.firstName }}
+{%endblock%}
 {%block content%}
 <div class="trainee card trainee-card detail-card">
   <img src="{{trainee.image.url}}" alt="{{ trainee.firstName }} {{ trainee.lastName }} profile image" />
@@ -12,5 +12,6 @@
   <p class="card-text">{{ trainee.track }}</p>
   <p class="card-text">{{ trainee.course.name }}</p>
   <p class="card-text">{{ trainee.createdAt }}</p>
+  <a class="btn btn-success" href="{%url 'update_trainee' trainee.id %}">Update</a>
 </div>
 {%endblock%}

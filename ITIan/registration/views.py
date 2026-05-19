@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework.permissions import IsAuthenticated  
+
 # Create your views here.
 
 def register(request):

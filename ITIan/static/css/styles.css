@@ -75,6 +75,29 @@ a {
   background: rgba(120, 184, 255, 0.14);
 }
 
+.sidebar form.nav-link {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar form.nav-link button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.sidebar form.nav-link button:hover,
+.sidebar form.nav-link button:focus {
+  color: var(--text);
+  background: rgba(120, 184, 255, 0.14);
+}
+
 .main-content {
   flex: 1;
   padding: 40px 48px;
@@ -194,15 +217,34 @@ a {
   background: rgba(107, 255, 107, 0.18);
 }
 
+.btn-secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .btn-primary {
   color: var(--text);
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
 }
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.form-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .form-card {
   display: grid;
   gap: 16px;
-  max-width: 520px;
+  width: min(100%, 520px);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;

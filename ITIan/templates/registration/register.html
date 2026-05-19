@@ -1,13 +1,22 @@
 <!-- prettier-ignore -->
 {% extends "layout.html" %}
 {% block title %}
-    Login
+    Register
 {%endblock%}
 
 {% block content %}
-<div>
-  <input placeholder="Enter yourName" />
-  <input type="password" placeholder="Enter you password" />
-  <input type="password" placeholder="confirm you password" />
+<div class="form-container">
+  <form
+    class="form-card django-form"
+    action="{% url 'register' %}"
+    method="post"
+  >
+    {% csrf_token %}
+    <h2 class="form-title">Register</h2>
+    {{ form }}
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
 </div>
 {% endblock %}
